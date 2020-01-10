@@ -2,6 +2,8 @@ server:
   port: 8087
 spring:
   profiles: development
+  application: 
+    name: exam-service
   datasource:
     url: jdbc:mysql://10.34.51.17:3306/exam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
     username: ${MYSQL_USERNAME:root}

@@ -1,6 +1,8 @@
 server:
   port:8086
 spring:
+  application:
+    name: admin-service
   profiles: development
   datasource:
     url: jdbc:mysql://10.34.51.17:3306/exam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
