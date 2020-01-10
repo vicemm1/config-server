@@ -6,6 +6,7 @@ spring:
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:123456}
     driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.mysql.cj.jdbc.MysqlDataSource
   redis:
     host: ${REDIS_HOST:localhost}
     port: ${REDIS_PORT:6379}
