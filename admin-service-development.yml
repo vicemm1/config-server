@@ -16,8 +16,8 @@ spring:
   rabbitmq:
     host: ${RABBIT_HOST:10.34.51.17}
     port: ${RABBIT_PORT:5672}
-    username: ${RABBITMQ_DEFAULT_USER:guest}
-    password: ${RABBITMQ_DEFAULT_PASS:guest}
+    username: ${RABBITMQ_DEFAULT_USER:joker}
+    password: ${RABBITMQ_DEFAULT_PASS:custhitachi}
   security:
     basic:
       false:
