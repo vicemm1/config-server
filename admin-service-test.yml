@@ -3,7 +3,7 @@ server:
 spring:
   application:
     name: admin-service
-  profiles: development
+  profiles: test
   datasource:
     url: jdbc:mysql://localhost:3306/exam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
     username: ${MYSQL_USERNAME:root}
