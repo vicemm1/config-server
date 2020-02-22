@@ -1,9 +1,9 @@
 server:
   port:8086
 spring:
+  profiles: test
   application:
     name: admin-service
-  profiles: test
   datasource:
     url: jdbc:mysql://localhost:3306/exam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
     username: ${MYSQL_USERNAME:root}
@@ -21,6 +21,9 @@ spring:
     port: ${RABBIT_PORT:5672}
     username: ${RABBITMQ_DEFAULT_USER:joker}
     password: ${RABBITMQ_DEFAULT_PASS:custhitachi}
+
+sys:
+  cacheExpire: 86400
 
 # hystrix配置
 hystrix:
@@ -50,6 +53,7 @@ mybatis:
     # 延迟加载
     lazy-loading-enabled: true
   mapper-locations: classpath:mapper/*.xml
+  
 pagehelper:
   helperDialect: mysql
   reasonable: true
