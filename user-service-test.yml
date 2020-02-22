@@ -39,6 +39,24 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 60000
+            
+mybatis:
+  type-aliaes-package: org.example.examservice.model
+  configuration:
+    map-underscore-to-camel-case: true
+    lazy-loading-enabled: true
+  mapper-location: classpath:mapper/*.xml
+
+#pagehelper配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+# 系统配置
+sys:
+  cacheExpire: 86400
 
 management:
   endpoints:
@@ -48,3 +66,6 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+cluster:
+  workId: ${CLUSTER_WORKID:1}
+  dataCenterId: ${CLUSTER_DATA_CENTER_ID:1}
