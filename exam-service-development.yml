@@ -5,20 +5,20 @@ spring:
   application: 
     name: exam-service
   datasource:
-    url: jdbc:mysql://10.34.51.17:3306/exam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
+    url: jdbc:mysql://10.34.51.220:3306/exam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
     username: ${MYSQL_USERNAME:root}
     password: ${MYSQL_PASSWORD:123456}
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.mysql.cj.jdbc.MysqlDataSource
   redis:
-    host: ${REDIS_HOST:10.34.51.17}
+    host: ${REDIS_HOST:10.34.51.220}
     port: ${REDIS_PORT:6379}
     maxIdle: 300
     maxActive: 600
     maxWait: 1000
     testOnBorrow: true
   rabbitmq:
-    host: ${RABBIT_HOST:10.34.51.17}
+    host: ${RABBIT_HOST:10.34.51.220}
     port: ${RABBIT_PORT:5672}
     username: ${RABBITMQ_DEFAULT_USER:joker}
     password: ${RABBITMQ_DEFAULT_PASS:custhitachi}
