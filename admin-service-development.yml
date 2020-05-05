@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:mysql://10.34.51.220:3306/exam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
     username: ${MYSQL_USERNAME:root}
-    password: ${MYSQL_PASSWORD:123456}
+    password: ${MYSQL_PASSWORD:root}
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.mysql.cj.jdbc.MysqlDataSource
   redis:
