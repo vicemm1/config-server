@@ -1,0 +1,61 @@
+server:
+  port: 8095
+spring:
+  application:
+    name: admin-service
+  profiles: product
+  datasource:
+    url: jdbc:mysql://10.7.201.2:3306/exam?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:custhitachi123--}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.mysql.cj.jdbc.MysqlDataSource
+  redis:
+    host: ${REDIS_HOST:10.7.201.2}
+    port: ${REDIS_PORT:6379}
+  rabbitmq:
+    host: ${RABBIT_HOST:10.7.201.2}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBITMQ_DEFAULT_USER:joker}
+    password: ${RABBITMQ_DEFAULT_PASS:custhitachi}
+  security:
+    basic:
+      false:
+# hystrix配置
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+# mybatis配置
+mybatis:
+  type-aliases-package: org.example.adminservice.model
+  configuration:
+    # 驼峰转换
+    map-underscore-to-camel-case: true
+    # 延迟加载
+    lazy-loading-enabled: true
+  mapper-locations: classpath:mapper/*.xml
+  
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+cluster:
+  workId: ${CLUSTER_WORKID:1}
+  dataCenterId: ${CLUSTER_DATA_CENTER_ID:1}

@@ -1,0 +1,68 @@
+server:
+    port: 8093
+spring:
+  profiles: product
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:10.7.201.2}:${MYSQL_PORT:3306}/${DB_EXAM:exam}?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:custhitachi123--}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.mysql.cj.jdbc.MysqlDataSource
+  redis:
+    host: ${REDIS_HOST:10.7.201.2}
+    port: ${REDIS_PORT:6379}
+  rabbitmq:
+    host: ${RABBIT_HOST:10.7.201.2}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBITMQ_DEFAULT_USER:joker}
+    password: ${RABBITMQ_DEFAULT_PASS:custhiatchi}
+#       boot:
+#          admin:
+#            client:
+#              url: http://${ADMIN_HOST:localhost}:${ADMIN_PORT:9186}/admin
+#             username: ${ADMIN_USERNAME:admin}
+#              password: ${ADMIN_PASSWORD:11}
+#              instance:
+#                service-base-url: http://${USER_SERVICE_HOST:localhost}:${server.port}
+#                metadata:
+#                  tags:
+#                    environment: prd
+# mybatis 配置
+mybatis:
+  type-aliaes-package: org.example.examservice.model
+  configuration:
+    map-underscore-to-camel-case: true
+    lazy-loading-enabled: true
+  mapper-location: classpath:mapper/*.xml
+
+#pagehelper配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+# hystrix配置
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+cluster:
+  workId: ${CLUSTER_WORKID:1}
+  dataCenterId: ${CLUSTER_DATA_CENTER_ID:1}
