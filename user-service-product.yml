@@ -11,7 +11,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.mysql.cj.jdbc.MysqlDataSource
   redis:
-    host: ${REDIS_HOST:10.7.201.2}
+    host: ${REDIS_HOST:127.0.0.1}
     port: ${REDIS_PORT:6379}
   rabbitmq:
     host: ${RABBIT_HOST:10.7.201.2}
