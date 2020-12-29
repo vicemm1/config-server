@@ -17,7 +17,7 @@ spring:
     host: ${RABBIT_HOST:10.7.201.2}
     port: ${RABBIT_PORT:5672}
     username: ${RABBITMQ_DEFAULT_USER:joker}
-    password: ${RABBITMQ_DEFAULT_PASS:custhiatchi}
+    password: ${RABBITMQ_DEFAULT_PASS:custhitachi}
 #       boot:
 #          admin:
 #            client:
